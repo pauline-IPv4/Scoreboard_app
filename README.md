@@ -1,6 +1,6 @@
 # My Scoreboard 
 
-A responsive web app build with Symfony framework **Symfony CLI version 5.4.3**
+A responsive web app build with **Symfony CLI version 5.4.3** framework
 
 My Scoreboard simulates the management of multi-player web games. 
 It is a basic training to Back-End development.
