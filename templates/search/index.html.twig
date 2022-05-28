@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MyScoreboard{% endblock %}
+
+{% block globalTitle %}Resultats de la recherche pour <code>{{keyword}}</code>{% endblock %}
+{% block body %}
+ 
+    <div class="card-columns"> 
+    {% for game in jeux %}
+         {{ include("admin/game/_card.html.twig") }}
+    {% endfor %}
+    </div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

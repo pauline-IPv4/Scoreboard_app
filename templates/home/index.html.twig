@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MyScoreboard{% endblock %}
+
+{% block body %}
+    
+    <div class="card-columns">
+    {% for game in games %}
+    {#
+    <div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{game.title}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">nombre de parties jouées : {{ game.contests|length }}</h6>
+        <p class="card-text">
+            Entre {{game.minPlayers}} et {{game.maxPlayers}} joueurs
+        </p>
+        <p><u><strong>Ils ont déjà joué :</u></strong>
+            {% for partieItem in game.contests %}
+                {% for joueurItem in partieItem.players %}
+                    {{ joueurItem.nickname }}, 
+                {% endfor %}
+            {% endfor %}
+        </p>
+        <a href="{{ path('app_home_contest', {title: game.title}) }}" class="card-link">Commencer une partie</a>
+    </div>
+    </div>
+    #}
+   {{ include("admin/game/_card.html.twig") }}
+    {% else %}
+        <mark>Aucun resutat trouvé</mark>
+    {% endfor %}
+    </div>
+    
+    <p>Il y a <strong>{{ nb_players }}</strong> joueurs enregistrés dans la base de données</p>
+
+    <ul>
+    {% for winner in winners %}
+        <li>{{winner.nickname}}</li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+
